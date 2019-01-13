@@ -333,6 +333,47 @@ contract SupplyChain is FarmerRole, CooperativeRole, DistributorRole, RetailerRo
         emit Purchased(_upc);
     }
 
+    function addToHistory(uint _upc, string memory _txHash) public onlyOwner {
+        string[] storage history = itemsHistory[_upc];
+        history.push(_txHash);
+    }
+
+    function returnHistoryOne(uint _upc) public view returns (
+        string memory,
+        string memory,
+        string memory,
+        string memory,
+        string memory,
+        string memory
+    ) {
+        string[] storage history = itemsHistory[_upc];
+        return (
+        history[0],
+        history[1],
+        history[2],
+        history[3],
+        history[4],
+        history[5]
+        );
+    }
+
+    function returnHistoryTwo(uint _upc) public view returns (
+        string memory,
+        string memory,
+        string memory,
+        string memory,
+        string memory
+    ) {
+        string[] storage history = itemsHistory[_upc];
+        return (
+        history[6],
+        history[7],
+        history[8],
+        history[9],
+        history[10]
+        );
+    }
+
     // Define a function 'fetchItemBuffproductPriceerOne' that fetches the data
     function fetchItemBufferOne(uint _upc) public view returns
     (

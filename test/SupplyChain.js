@@ -323,4 +323,76 @@ contract(SupplyChain, accounts => {
             }
         });
     });
+
+    describe('records the item history', () => {
+        it('records the transaction history', async () => {
+            let tx1 = await this.contract.harvestItem(
+                upc,
+                originFarmerID,
+                originFarmName,
+                originFarmInformation,
+                originFarmLatitude,
+                originFarmLongitude,
+                productNotes,
+                {from: farmer}
+            );
+            tx1 = tx1.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx1, {from: defaultAccount});
+
+            let tx2 = await this.contract.shipGrappesItem(upc, cooperative, {from: farmer});
+            tx2 = tx2.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx2, {from: defaultAccount});
+
+
+            let tx3 = await this.contract.processItem(upc, {from: cooperative});
+            tx3 = tx3.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx3, {from: defaultAccount});
+
+            let tx4 = await this.contract.ageItem(upc, {from: cooperative});
+            tx4 = tx4.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx4, {from: defaultAccount});
+
+            let tx5 = await this.contract.bottleItem(upc, {from: cooperative});
+            tx5 = tx5.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx5, {from: defaultAccount});
+
+            let tx6 = await this.contract.boxItem(upc, {from: cooperative});
+            tx6 = tx6.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx6, {from: defaultAccount});
+
+            let tx7 = await this.contract.putForSaleItem(upc, productPrice, {from: cooperative});
+            tx7 = tx7.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx7, {from: defaultAccount});
+
+            let tx8 = await this.contract.buyItem(upc, {from: distributor, value: productPrice});
+            tx8 = tx8.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx8, {from: defaultAccount});
+
+            let tx9 = await this.contract.shipItem(upc, retailer, {from: distributor});
+            tx9 = tx9.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx9, {from: defaultAccount});
+
+            let tx10 = await this.contract.receiveItem(upc, retailerPrice, {from: retailer});
+            tx10 = tx10.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx10, {from: defaultAccount});
+
+            let tx11 = await this.contract.purchaseItem(upc, {from: consumer, value: retailerPrice});
+            tx11 = tx11.logs[0].transactionHash;
+            await this.contract.addToHistory(upc, tx11, {from: defaultAccount});
+
+            const historyOne = await this.contract.returnHistoryOne(upc);
+            const historyTwo = await this.contract.returnHistoryTwo(upc);
+            assert.equal(tx1, historyOne[0]);
+            assert.equal(tx2, historyOne[1]);
+            assert.equal(tx3, historyOne[2]);
+            assert.equal(tx4, historyOne[3]);
+            assert.equal(tx5, historyOne[4]);
+            assert.equal(tx6, historyOne[5]);
+            assert.equal(tx7, historyTwo[0]);
+            assert.equal(tx8, historyTwo[1]);
+            assert.equal(tx9, historyTwo[2]);
+            assert.equal(tx10, historyTwo[3]);
+            assert.equal(tx11, historyTwo[4]);
+        });
+    })
 });

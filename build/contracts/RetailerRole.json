@@ -2792,10 +2792,37 @@
   },
   "networks": {
     "4": {
-      "events": {},
+      "events": {
+        "0x71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "RetailerAdded",
+          "type": "event",
+          "signature": "0x71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa"
+        },
+        "0xdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "RetailerRemoved",
+          "type": "event",
+          "signature": "0xdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db"
+        }
+      },
       "links": {},
-      "address": "0x051163Bf46B14C03709F61C3AB9FC6eb8684285e",
-      "transactionHash": "0xae36c7c460cad586c23f75bedc5ff37485c6704d9f921bca31dbe7616e3f9058"
+      "address": "0x8F1b45F3Cd6158bB6d5D531d8F5842340612DB35",
+      "transactionHash": "0x92d0cdfda77c41d80cb19b96e7fb6a53dafa65219f51a58c58c6c29d87ce52b7"
     },
     "5777": {
       "events": {
@@ -2827,12 +2854,12 @@
         }
       },
       "links": {},
-      "address": "0xcA6eb115A927F9FbA22b2DeC134E1DD5209059F1",
-      "transactionHash": "0x4568b2b007c60c373449ebedcd97f8bffdb87274da334fc8e851ba2b3ea88818"
+      "address": "0x22420333609BDc18491e809b035F82F6b8142E98",
+      "transactionHash": "0xb8f41408dd598055c93f0515455307365e95dc0ed115c5fd830ec7d9c80c3db0"
     }
   },
   "schemaVersion": "3.0.0",
-  "updatedAt": "2019-01-13T12:44:01.175Z",
+  "updatedAt": "2019-01-13T18:45:31.752Z",
   "devdoc": {
     "methods": {}
   },

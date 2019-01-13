@@ -1,3 +1,7 @@
+var HDWalletProvider = require("truffle-hdwallet-provider");
+
+var mnemonic = "fame peanut hurdle inflict champion spike outside aisle shy link dinosaur lumber";
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -51,6 +55,14 @@ module.exports = {
       port: 7545,
       network_id: "*"
     },
+    rinkeby: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/26623add480a4a0c9f16a0a548f34093")
+      },
+      network_id: 4,
+      gas: 6500000,
+      gasPrice: 10000000000
+    }
 
     // Another network with more advanced options...
     // advanced: {

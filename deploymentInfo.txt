@@ -1,0 +1,210 @@
+truffle deploy --network rinkeby
+⚠️  Important ⚠️
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+Try: npm install --save truffle-hdwallet-provider@web3-one
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'rinkeby-fork'
+> Network id:      4
+> Block gas limit: 7001056
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'FarmerRole'
+   ----------------------
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.311227217
+   > gas used:            380103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00380103 ETH
+
+
+   Deploying 'DistributorRole'
+   ---------------------------
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.307426187
+   > gas used:            380103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00380103 ETH
+
+
+   Replacing 'DistributorRole'
+   ---------------------------
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.303625157
+   > gas used:            380103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00380103 ETH
+
+
+   Deploying 'RetailerRole'
+   ------------------------
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.299822207
+   > gas used:            380295
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00380295 ETH
+
+
+   Deploying 'ConsumerRole'
+   ------------------------
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.296021177
+   > gas used:            380103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00380103 ETH
+
+
+   Deploying 'SupplyChain'
+   -----------------------
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.254937767
+   > gas used:            4108341
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.04108341 ETH
+
+
+   Deploying 'Ownable'
+   -------------------
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.211233647
+   > gas used:            4370412
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.04370412 ETH
+
+   -------------------------------------
+   > Total cost:           0.1037946 ETH
+
+
+Summary
+=======
+> Total deployments:   7
+> Final cost:          0.1037946 ETH
+
+⚠️  Important ⚠️
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+Try: npm install --save truffle-hdwallet-provider@web3-one
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 7006834
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'FarmerRole'
+   ----------------------
+   > transaction hash:    0x8da346db680962627a0c7339ede4be8464fcd310982d4444080c65834e425477
+   > Blocks: 0            Seconds: 4
+   > contract address:    0xcaF3c6EF016781bFBbA170cfDEed0fC695b9f3d3
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.311077217
+   > gas used:            395103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00395103 ETH
+
+
+   Deploying 'DistributorRole'
+   ---------------------------
+   > transaction hash:    0xc57e5df8a73d78ab76ad26485fcc499a899979ebee344d684b4a1d9e1080d887
+   > Blocks: 0            Seconds: 8
+   > contract address:    0xf0334A4540b4eE00EeE476fC5BC71964Dd8917Ad
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.307126187
+   > gas used:            395103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00395103 ETH
+
+
+   Replacing 'DistributorRole'
+   ---------------------------
+   > transaction hash:    0x031745049777771a5015148f5b214b99c8e2504c829535f6a0056b80b8361479
+   > Blocks: 0            Seconds: 8
+   > contract address:    0xb18e3849Ad4129b195AD4592347491E51881B9cB
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.303175157
+   > gas used:            395103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00395103 ETH
+
+
+   Deploying 'RetailerRole'
+   ------------------------
+   > transaction hash:    0xae36c7c460cad586c23f75bedc5ff37485c6704d9f921bca31dbe7616e3f9058
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x051163Bf46B14C03709F61C3AB9FC6eb8684285e
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.299222207
+   > gas used:            395295
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00395295 ETH
+
+
+   Deploying 'ConsumerRole'
+   ------------------------
+   > transaction hash:    0xba0890954e04ea1c299f037615b49fd6ffeaacb69fa10faa3e0ec2d8edeb22ec
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x644C83Ee84Cac6371b2f6a137aA854Ad02C9dc67
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.295271177
+   > gas used:            395103
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00395103 ETH
+
+
+   Deploying 'SupplyChain'
+   -----------------------
+   > transaction hash:    0x06cf4fa99808881ac045868e0697f7372b487554e7a31eee70deb8d1d0bc8ac9
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x3875f13c611ff70e3884ADE6f222cB5B20b9d4E8
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.252987767
+   > gas used:            4228341
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.04228341 ETH
+
+
+   Deploying 'Ownable'
+   -------------------
+   > transaction hash:    0xe44e587f017f4c17d1a0a3c0f1731e159dd540020668eae791fc007fe250ed94
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x499f41cE1a4a5CFDEC9ebf106763272CA2A7Eaaf
+   > account:             0x2f5eEc3E608833E66832CE9EC9d6D389976a37DC
+   > balance:             40.207933647
+   > gas used:            4505412
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.04505412 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.1070946 ETH
+
+
+Summary
+=======
+> Total deployments:   7
+> Final cost:          0.1070946 ETH

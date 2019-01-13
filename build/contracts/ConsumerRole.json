@@ -2527,12 +2527,12 @@
         }
       },
       "links": {},
-      "address": "0x35e7EDd0E7126C84C54815f1CB4D82585246Bd4f",
-      "transactionHash": "0xf79eca81df7b0c74c7956746aa3f33f437f4efc389a8d6b6080104cc3958eb63"
+      "address": "0x6DDc3f24e76709755EE345edfC6082C737d33402",
+      "transactionHash": "0x13322424ad8eb937712801be8cc10b98006ae30d8923cd28444fb1e7b697a1e4"
     }
   },
   "schemaVersion": "3.0.0",
-  "updatedAt": "2019-01-12T20:25:32.276Z",
+  "updatedAt": "2019-01-13T12:23:16.414Z",
   "devdoc": {
     "methods": {}
   },

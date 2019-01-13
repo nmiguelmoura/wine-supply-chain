@@ -19,6 +19,11 @@ contract RetailerRole {
         _;
     }
 
+    modifier verifiedRetailer(address account) {
+        require(isRetailer(account));
+        _;
+    }
+
     function isRetailer(address account) public view returns (bool) {
         return retailers.has(account);
     }

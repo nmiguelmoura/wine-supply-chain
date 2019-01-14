@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wine Supply Chain</title>
+</head>
+<body>
+    <h1>Wine Supply Chain</h1>
+    <div>
+        <h2>Add user</h2>
+        <input type="text" placeholder="Account address" name="add-user-input"><br/>
+        <select name="add-user-select">
+            <option value="0">Farmer</option>
+            <option value="1">Cooperative</option>
+            <option value="2">Distributor</option>
+            <option value="3">Retailer</option>
+            <option value="4">Consumer</option>
+        </select><br/>
+        <button name="add-user-btn">Add user</button>
+    </div>
+    <br/>
+    <div>
+        <h2>Send transaction</h2>
+        <div>
+            <p>You want to...</p>
+            <select name="item-management-select">
+                <option value="0">Harvest grappes</option>
+                <option value="1">Ship grappes</option>
+                <option value="2">Process grappes</option>
+                <option value="3">Age wine</option>
+                <option value="4">Bottle wine</option>
+                <option value="5">Box wine</option>
+                <option value="6">Put for sale</option>
+                <option value="7">Mark as sold</option>
+                <option value="8">Ship wine</option>
+                <option value="9">Receive wine</option>
+                <option value="10">Purchase wine</option>
+            </select>
+        </div>
+        <div>
+            <input type="number" placeholder="UPC" name="item-management-upc" /><br/>
+            <input type="text" placeholder="Farm name" name="item-management-farm-name" /><br/>
+            <input type="text" placeholder="Farm information" name="item-management-farm-info" /><br/>
+            <input type="number" placeholder="Farm latitude" name="item-management-latitude" /><br/>
+            <input type="number" placeholder="Farm longitude" name="item-management-longitude" /><br/>
+            <input type="text" placeholder="Product notes" name="item-management-product-notes" /><br/>
+            <input type="text" placeholder="New owner" name="item-management-new-owner" style="display: none;"/><br/>
+            <input type="number" placeholder="Product price (in ether)" name="item-management-price" style="display: none;"/><br/>
+            <button name="item-management-btn">Submit</button>
+        </div>
+    </div>
+    <br />
+    <div>
+        <h2>Product info</h2>
+        <input type="text" placeholder="UPC" /><br/>
+        <button>Search</button>
+    </div>
+    <script src="src/UserManagement.js"></script>
+    <script src="src/ItemManagement.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>

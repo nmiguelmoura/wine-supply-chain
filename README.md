@@ -1,6 +1,12 @@
 #Wine supply chain
 
-Built using truffle v5.0.0.
+###Contract address
+0x96dc23D4cAf00f371036F7c5EF5f0F395b154701
+
+###Versions
+- Node v11.5.0
+- Truffle v5.0.0
+- Web3 (in front-end the one currently provided by metamask)
 
 ###Setup
 1. Install [truffle](https://truffleframework.com/)

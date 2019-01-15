@@ -33,7 +33,7 @@ class ItemManagement {
             },
             7: {
                 funcName: 'buyItem',
-                inputs: [0]
+                inputs: [0, 7]
             },
             8: {
                 funcName: 'shipItem',
@@ -45,21 +45,160 @@ class ItemManagement {
             },
             10: {
                 funcName: 'purchaseItem',
-                inputs: [0]
+                inputs: [0, 7]
             },
         };
-        this._optionSelected = 0;
+        this._optionSelected = "0";
         this._init();
     }
 
     _btnClick(event) {
-        console.log('oi');
+        console.log(this._optionSelected);
+        switch(this._optionSelected) {
+            case "0":
+                this._contract.harvestItem(this._inputs[0].value, this._defaultAddress, this._inputs[1].value, this._inputs[2].value, this._inputs[3].value, this._inputs[4].value, this._inputs[5].value, {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "1":
+                this._contract.shipGrappesItem(this._inputs[0].value, this._inputs[6].value, {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "2":
+                this._contract.processItem(this._inputs[0].value, {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "3":
+                this._contract.ageItem(this._inputs[0].value, {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "4":
+                this._contract.bottleItem(this._inputs[0].value, {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "5":
+                this._contract.boxItem(this._inputs[0].value, {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "6":
+                this._contract.putForSaleItem(this._inputs[0].value, window.web3.toWei(this._inputs[7].value), {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "7":
+                this._contract.buyItem(this._inputs[0].value, {from: this._defaultAddress, value: window.web3.toWei(this._inputs[7].value)}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "8":
+                this._contract.shipItem(this._inputs[0].value, this._inputs[6].value, {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "9":
+                this._contract.receiveItem(this._inputs[0].value, window.web3.toWei(this._inputs[7].value), {from: this._defaultAddress}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+
+            case "10":
+                this._contract.purchaseItem(this._inputs[0].value, {from: this._defaultAddress, value: window.web3.toWei(this._inputs[7].value)}, (err, response) => {
+                    if(err) {
+                        alert(err);
+                        return;
+                    }
+
+                    alert('Transaction successful');
+                });
+                break;
+        }
     }
 
     _selectChange(event) {
         this._optionSelected = this._select.value;
+        this._changeInputs(this._optionSelected);
+    }
 
-        const sel = this._options[this._optionSelected];
+    _hideAllInputBoxes() {
+        let i;
+        for(i = 0; i < 8; i++) {
+            this._inputs[i].style.display = 'none';
+        }
+    }
+
+    _changeInputs(option) {
+        this._hideAllInputBoxes();
+
+        const sel = this._options[option];
+
+        let i;
+        for(i = 0; i < sel.inputs.length; i++) {
+            this._inputs[sel.inputs[i]].style.display = 'block';
+        }
     }
 
     _addListener() {
@@ -80,14 +219,11 @@ class ItemManagement {
         };
         this._select = document.getElementsByName('item-management-select')[0];
         this._btn = document.getElementsByName('item-management-btn')[0];
-
-        // this._contract.harvestItem(124, this._defaultAddress, "My farm", "This is a farm", "12", "13", "Good grappes", {from: this._defaultAddress}, (err, response) => {
-        //     console.log(err, response);
-        // })
     }
 
     _init() {
         this._getDOMReferences();
         this._addListener();
+        this._changeInputs(this._optionSelected);
     }
 }

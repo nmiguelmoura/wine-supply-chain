@@ -3,6 +3,7 @@ class App {
         this._contract = null;
         this._userManagement = null;
         this._itemManagement = null;
+        this._itemInfo = null;
         this._init();
     }
 
@@ -1034,6 +1035,7 @@ class App {
         const defaultAddress = web3.eth.defaultAccount;
         this._userManagement = new UserManagement(this._contract, defaultAddress);
         this._itemManagement = new ItemManagement(this._contract, defaultAddress);
+        this._itemInfo = new ItemInfo(this._contract, defaultAddress);
     }
 }
 

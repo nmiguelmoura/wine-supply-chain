@@ -18,7 +18,9 @@
         </select><br/>
         <button name="add-user-btn">Add user</button>
     </div>
-    <br/>
+    <br />
+    ---------------------------------------------
+    <br />
     <div>
         <h2>Send transaction</h2>
         <div>
@@ -31,32 +33,37 @@
                 <option value="4">Bottle wine</option>
                 <option value="5">Box wine</option>
                 <option value="6">Put for sale</option>
-                <option value="7">Mark as sold</option>
+                <option value="7">Buy wine</option>
                 <option value="8">Ship wine</option>
                 <option value="9">Receive wine</option>
                 <option value="10">Purchase wine</option>
             </select>
         </div>
         <div>
-            <input type="number" placeholder="UPC" name="item-management-upc" /><br/>
-            <input type="text" placeholder="Farm name" name="item-management-farm-name" /><br/>
-            <input type="text" placeholder="Farm information" name="item-management-farm-info" /><br/>
-            <input type="number" placeholder="Farm latitude" name="item-management-latitude" /><br/>
-            <input type="number" placeholder="Farm longitude" name="item-management-longitude" /><br/>
-            <input type="text" placeholder="Product notes" name="item-management-product-notes" /><br/>
-            <input type="text" placeholder="New owner" name="item-management-new-owner" style="display: none;"/><br/>
-            <input type="number" placeholder="Product price (in ether)" name="item-management-price" style="display: none;"/><br/>
+            <input type="number" placeholder="UPC" name="item-management-upc" />
+            <input type="text" placeholder="Farm name" name="item-management-farm-name" />
+            <input type="text" placeholder="Farm information" name="item-management-farm-info" />
+            <input type="number" placeholder="Farm latitude" name="item-management-latitude" />
+            <input type="number" placeholder="Farm longitude" name="item-management-longitude" />
+            <input type="text" placeholder="Product notes" name="item-management-product-notes" />
+            <input type="text" placeholder="New owner" name="item-management-new-owner" />
+            <input type="number" placeholder="Product price (in ether)" name="item-management-price" />
             <button name="item-management-btn">Submit</button>
         </div>
     </div>
     <br />
+    ---------------------------------------------
+    <br />
     <div>
         <h2>Product info</h2>
-        <input type="text" placeholder="UPC" /><br/>
-        <button>Search</button>
+        <input type="text" placeholder="UPC" name="item-info-input"/><br/>
+        <button name="item-info-btn">Search</button>
+        <p name="item-info-p"></p>
+        <p name="item-info-p"></p>
     </div>
     <script src="src/UserManagement.js"></script>
     <script src="src/ItemManagement.js"></script>
+    <script src="src/ItemInfo.js"></script>
     <script src="src/app.js"></script>
 </body>
 </html>

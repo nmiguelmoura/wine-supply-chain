@@ -1,4 +1,4 @@
-#Wine supply chain
+#Wine supply chain (**Experiment - not production ready**)
 
 ###Contract address
 0x96dc23D4cAf00f371036F7c5EF5f0F395b154701
